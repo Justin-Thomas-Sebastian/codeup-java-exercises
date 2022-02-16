@@ -1,8 +1,8 @@
 public class HelloWorld {
     public static void main(String[] args) {
         // HELLO WORLD EXERCISE
-        System.out.print("Hello, ");
-        System.out.print("World!");
+        // System.out.print("Hello, ");
+        // System.out.print("World!");
 
         // SYNTAX, TYPES, AND VARIABLES EXERCISE
         // System.out.println(" "); // whitespace
@@ -19,10 +19,10 @@ public class HelloWorld {
         // System.out.println(myString);
 
         // 3. Change your code to assign a character value to myString. What do you notice?
-        // myString = 'C';   // Will not compile! Different data type
+        // String myString = 'C';   // Will not compile! Different data type
 
         // 4. Change your code to assign the value 3.14159 to myString. What happens?
-        // myString = 3.14259;  // Will not compile! Different data type
+        // String myString = 3.14259;  // Will not compile! Different data type
 
         // 5. Declare a long variable named myNumber,
         // but do not assign anything to it.
@@ -36,7 +36,6 @@ public class HelloWorld {
 
         // 7. Change your code to assign the value 123L (Note the 'L' at the end) to myNumber.
         // long myNumber = 123L;   // Specifying long type using L
-        // myNumber = 123;   // Will compile through implicit casting (long -> int)
         // System.out.println(myNumber);
 
         // 8. Change your code to assign the value 123 to myNumber.
@@ -60,8 +59,8 @@ public class HelloWorld {
         // int x = 5;
         // System.out.println(++x);     // should be 6
         // System.out.println(x);       // should be 6
-        // x++ returns value first before incrementing
-        // ++x increments before returning value
+        // x++ prints value first before incrementing
+        // ++x increments before printing value
 
         // 11. Try to create a variable named class. What happens?
         // String class = "adsf"; // Will not compile since class is a reserved keyword
