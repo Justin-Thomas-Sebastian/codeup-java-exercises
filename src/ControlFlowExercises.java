@@ -52,26 +52,26 @@ public class ControlFlowExercises {
 //        }
 
         // TABLE OF POWERS
-//        boolean displayTable = true;
-//        while(displayTable){
-//            Scanner in = new Scanner(System.in);
-//            System.out.print("What number would you like to go up to? ");
-//            int userInputNum = in.nextInt();
-//            System.out.println("Here is your table!");
-//            System.out.println("number | squared | cubed");
-//            System.out.println("------ | ------- | -----");
-//            for(int i = 1; i <= userInputNum; i++){
-//                int square = (int) Math.pow(i, 2);
-//                int cube = (int) Math.pow(i, 3);
-//                System.out.printf("%-6s | %-7s | %-6s\n", i, square, cube);
-//            }
-//            System.out.print("Would you like to continue? Y/N: ");
-//            String userInputStr = in.next();
-//            if(userInputStr.equalsIgnoreCase("n")){
-//                displayTable = false;
-//                System.out.println("Exiting...");
-//            }
-//        }
+        boolean displayTable = true;
+        while(displayTable){
+            Scanner in = new Scanner(System.in);
+            System.out.print("What number would you like to go up to? ");
+            int userInputNum = in.nextInt();
+            System.out.println("Here is your table!");
+            System.out.println("number | squared | cubed");
+            System.out.println("------ | ------- | -----");
+            for(int i = 1; i <= userInputNum; i++){
+                int square = (int) Math.pow(i, 2);
+                int cube = (int) Math.pow(i, 3);
+                System.out.printf("%-6s | %-7s | %-6s\n", i, square, cube);
+            }
+            System.out.print("Would you like to continue? Y/N: ");
+            String userInputStr = in.next();
+            if(userInputStr.equalsIgnoreCase("n")){
+                displayTable = false;
+                System.out.println("Exiting...");
+            }
+        }
 
         // GRADES CONVERSION
         Scanner in = new Scanner(System.in);
@@ -106,8 +106,8 @@ public class ControlFlowExercises {
             }
 
             System.out.print("Would you like to enter another grade? Y/N: ");
-            String userInputStr = in.next();
-            if(userInputStr.equalsIgnoreCase("n")){
+            String userOption = in.next();
+            if(userOption.equalsIgnoreCase("n")){
                 enterGrades = false;
                 System.out.println("Exiting...");
             }
