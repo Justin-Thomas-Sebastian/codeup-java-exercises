@@ -1,4 +1,3 @@
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class MethodsExercises {
@@ -11,12 +10,12 @@ public class MethodsExercises {
 //        System.out.println(divide(20,4));
 //        System.out.println(remainder(50, 7));
 //
-//        // getInteger test
+        // getInteger test
 //        int userInput = getInteger(1, 10);
 //        System.out.println("Validated: " + userInput);
 
-        // factorial test
-        System.out.println("Factorial: " + getFactorial());
+        // getFactorial test
+        getFactorial();
     }
 
     public static int add(int a, int b){
@@ -39,22 +38,36 @@ public class MethodsExercises {
         return a % b;
     }
 
+    // Validates user input is between a certain range
     public static int getInteger(int min, int max) {
         Scanner in = new Scanner(System.in);
         System.out.print("Enter a number between " + min + " and " + max + ": ");
         int userInput = in.nextInt();
         if (!(userInput >= min && userInput <= max)) {
+            System.out.println("Invalid input.");
             userInput = getInteger(min, max);
         }
         return userInput;
     }
 
-    public static long getFactorial(){
-        int userInput = getInteger(1,10);
-        long factorial = 1;
-        for(int i = 1; i <= userInput; i++){
-            factorial = factorial * i;
+    // Return factorial of user input integer
+    public static void getFactorial(){
+        Scanner in = new Scanner(System.in);
+        boolean isFindingFactorial = true;
+
+        while(isFindingFactorial){
+            int userInput = getInteger(1,20);
+            long factorial = 1;
+            for(long i = 1; i <= userInput; i++){
+                factorial = factorial * i;
+            }
+            System.out.println("Factorial: " + factorial);
+            System.out.print("Find another factorial value? y/n: ");
+            String userOption = in.nextLine();
+            if(userOption.equalsIgnoreCase("n")){
+                System.out.println("Exiting...");
+                isFindingFactorial = false;
+            }
         }
-        return factorial;
     }
 }
