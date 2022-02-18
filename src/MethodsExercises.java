@@ -15,7 +15,10 @@ public class MethodsExercises {
 //        System.out.println("Validated: " + userInput);
 
         // getFactorial test
-        getFactorial();
+        // getFactorial();
+
+        // Dice test
+        rollDice();
     }
 
     public static int add(int a, int b){
@@ -67,6 +70,30 @@ public class MethodsExercises {
             if(userOption.equalsIgnoreCase("n")){
                 System.out.println("Exiting...");
                 isFindingFactorial = false;
+            }
+        }
+    }
+
+    // Roll 2 dice with n sides
+    public static void rollDice(){
+        Scanner in = new Scanner(System.in);
+        boolean isRollingDice = true;
+
+        while(isRollingDice){
+            System.out.println("Specify number of sides per dice.");
+            int numOfSidesPerDice = getInteger(2, 20);
+            System.out.print("Press Enter to roll dice: ");
+            String userInput = in.nextLine();
+            int dice1 = (int) (Math.random() * numOfSidesPerDice) + 1;
+            int dice2 = (int) (Math.random() * numOfSidesPerDice) + 1;
+            System.out.println("Dice 1: " + dice1);
+            System.out.println("Dice 2: " + dice2);
+            System.out.println("Final result: " + (dice1 + dice2));
+            System.out.println("Would you like to roll again? y/n: ");
+            String userOption = in.nextLine();
+            if(userOption.equalsIgnoreCase("n")){
+                System.out.println("Exiting...");
+                isRollingDice = false;
             }
         }
     }
