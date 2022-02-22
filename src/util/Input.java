@@ -53,7 +53,7 @@ public class Input {
     // getDouble without parameters
     public double getDouble(){
         double min = 0.01;
-        double max = 100.001;
+        double max = 1_000_000.01;
         return getDouble(min, max);
     }
 }
