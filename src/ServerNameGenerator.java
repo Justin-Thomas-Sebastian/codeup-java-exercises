@@ -27,17 +27,15 @@ public class ServerNameGenerator {
            "early"
    };
 
-   public static String getRandomString(String[] strArr){
+   public static String getRandomString(String[] strArr) {
       Random random = new Random();
       int randomIndex = random.nextInt(strArr.length);
       return strArr[randomIndex];
    }
 
-   public static void main(String[] args){
+   public static void main(String[] args) {
       ServerNameGenerator server = new ServerNameGenerator();
       System.out.println("Here is your server name:");
       System.out.println(getRandomString(server.Adjectives) + "-" + getRandomString(server.Nouns));
    }
 }
-
-
