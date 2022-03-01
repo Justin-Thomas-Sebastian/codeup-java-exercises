@@ -1,12 +1,15 @@
 package movies;
 
 import util.*;
+
+import java.util.List;
 import java.util.Arrays;
+import java.util.ArrayList;
 
 public class MoviesApplication {
     public static void main(String[] args) {
         Input in = new Input();
-        Movie[] movies = MoviesArray.findAll();
+        List<Movie> movies = new ArrayList<>(Arrays.asList(MoviesArray.findAll()));
         boolean isRunning = true;
 
         while(isRunning){
@@ -19,8 +22,9 @@ public class MoviesApplication {
             System.out.println("3 - drama");
             System.out.println("4 - horror");
             System.out.println("5 - scifi");
+            System.out.println("6 - Add new movie");
             System.out.println(" ");
-            int userInput = in.getInt(0,5);
+            int userInput = in.getInt(0,6);
 
             switch(userInput){
                 case 0:
@@ -69,6 +73,15 @@ public class MoviesApplication {
                             System.out.println(" ");
                         }
                     }
+                    break;
+                case 6:
+                    System.out.print("Enter name of movie: ");
+                    String name = in.getString();
+                    System.out.print("Enter genre: ");
+                    String genre = in.getString();
+                    Movie newMovie = new Movie(name, genre);
+                    movies.add(newMovie);
+                    System.out.println("Added " + name + " - " + genre + " to database.");
                     break;
                 default:
                     isRunning = false;
