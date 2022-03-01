@@ -40,7 +40,7 @@ public class MoviesApplication {
                     break;
                 case 2:
                     for(Movie movie: movies){
-                        if(movie.getCategory() == "animated"){
+                        if(movie.getCategory().equalsIgnoreCase("animated")){
                             System.out.print(movie.getName() + " - ");
                             System.out.print(movie.getCategory());
                             System.out.println(" ");
@@ -49,7 +49,7 @@ public class MoviesApplication {
                     break;
                 case 3:
                     for(Movie movie: movies){
-                        if(movie.getCategory() == "drama"){
+                        if(movie.getCategory().equalsIgnoreCase("drama")){
                             System.out.print(movie.getName() + " - ");
                             System.out.print(movie.getCategory());
                             System.out.println(" ");
@@ -58,7 +58,7 @@ public class MoviesApplication {
                     break;
                 case 4:
                     for(Movie movie: movies){
-                        if(movie.getCategory() == "horror"){
+                        if(movie.getCategory().equalsIgnoreCase("horror")){
                             System.out.print(movie.getName() + " - ");
                             System.out.print(movie.getCategory());
                             System.out.println(" ");
@@ -67,7 +67,7 @@ public class MoviesApplication {
                     break;
                 case 5:
                     for(Movie movie: movies){
-                        if(movie.getCategory() == "scifi"){
+                        if(movie.getCategory().equalsIgnoreCase("scifi")){
                             System.out.print(movie.getName() + " - ");
                             System.out.print(movie.getCategory());
                             System.out.println(" ");
@@ -77,11 +77,11 @@ public class MoviesApplication {
                 case 6:
                     System.out.print("Enter name of movie: ");
                     String name = in.getString();
-                    System.out.print("Enter genre: ");
-                    String genre = in.getString();
-                    Movie newMovie = new Movie(name, genre);
+                    System.out.print("Enter category: ");
+                    String category = in.getString();
+                    Movie newMovie = new Movie(name, category);
                     movies.add(newMovie);
-                    System.out.println("Added " + name + " - " + genre + " to database.");
+                    System.out.println("Added " + name + " - " + category + " to database.");
                     break;
                 default:
                     isRunning = false;
