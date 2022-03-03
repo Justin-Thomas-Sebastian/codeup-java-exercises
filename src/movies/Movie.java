@@ -24,4 +24,10 @@ public class Movie {
     public String getCategory(){
         return this.category;
     }
+
+    public void displayInfo(){
+        System.out.print(this.getName() + " - ");
+        System.out.print(this.getCategory());
+        System.out.println(" ");
+    }
 }
