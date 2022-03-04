@@ -14,7 +14,7 @@ public class Input {
     }
 
     public boolean yesNo(){
-        System.out.print("Validate yes or no: ");
+        System.out.print("y/n: ");
         String userInput = this.getString();
         if(userInput.equalsIgnoreCase("Y") || userInput.equalsIgnoreCase("YES")){
             return true;
