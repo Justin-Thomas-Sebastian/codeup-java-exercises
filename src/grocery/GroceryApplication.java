@@ -77,11 +77,11 @@ public class GroceryApplication {
             }
 
             // SORT
-            Collections.sort(beverageItems, Item.itemNameComparator);
-            Collections.sort(foodItems, Item.itemNameComparator);
-            Collections.sort(personalCareItems, Item.itemNameComparator);
-            Collections.sort(householdItems, Item.itemNameComparator);
-            Collections.sort(otherItems, Item.itemNameComparator);
+            beverageItems.sort(Item.itemNameComparator);
+            foodItems.sort(Item.itemNameComparator);
+            personalCareItems.sort(Item.itemNameComparator);
+            householdItems.sort(Item.itemNameComparator);
+            otherItems.sort(Item.itemNameComparator);
 
             // PRINTING OPTIONS
             boolean isPrinting = true;
