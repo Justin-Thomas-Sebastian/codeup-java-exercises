@@ -5,6 +5,7 @@ public class InputTest {
         Input myInput = new Input();
         System.out.print("Testing getString(): ");
         System.out.println("myInput.getString() = " + myInput.getString());
+        System.out.print("Testing yesNo(): ");
         System.out.println("myInput.yesNo() = " + myInput.yesNo());
         System.out.println("myInput.getInt(1,50) = " + myInput.getInt(1, 50)); // getInt w/ args
         System.out.println("myInput.getInt() = " + myInput.getInt());  // getInt w/o args

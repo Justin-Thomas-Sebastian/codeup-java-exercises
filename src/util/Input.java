@@ -26,8 +26,15 @@ public class Input {
     // getInt() with parameters
     public int getInt(int min, int max){
         System.out.print("Enter number between " + min + " and " + max + ": ");
-        int userInput = Integer.parseInt(this.getString());
-        if(!(userInput >= min && userInput <= max)){
+        int userInput = 0;
+        try {
+            userInput = Integer.parseInt(this.getString());
+            if(!(userInput >= min && userInput <= max)){
+                System.out.println("Out of bounds(" + min + " - " + max + "). Try again.");
+                userInput = getInt(min, max);
+            }
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid input. Try again.");
             userInput = getInt(min, max);
         }
         return userInput;
@@ -35,16 +42,29 @@ public class Input {
 
     // getInt() without parameters
     public int getInt(){
-        int min = 0;
-        int max = 1000;
-        return getInt(min, max);
+        System.out.print("Enter whole number: ");
+        int userInput = 0;
+        try {
+            userInput = Integer.parseInt(this.getString());
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid input. Try again.");
+            userInput = getInt();
+        }
+        return userInput;
     }
 
     // getDouble with parameters
     public double getDouble(double min, double max){
         System.out.print("Enter number between " + min + " and " + max + ": ");
-        double userInput = Double.parseDouble(this.getString());
-        if(!(userInput >= min && userInput <= max)){
+        double userInput = 0.0;
+        try {
+            userInput = Double.parseDouble(this.getString());
+            if(!(userInput >= min && userInput <= max)){
+                System.out.println("Out of bounds(" + min + " - " + max + "). Try again.");
+                userInput = getDouble(min, max);
+            }
+        } catch (NumberFormatException e){
+            System.out.println("Invalid input. Try again.");
             userInput = getDouble(min, max);
         }
         return userInput;
@@ -52,9 +72,15 @@ public class Input {
 
     // getDouble without parameters
     public double getDouble(){
-        double min = 0.01;
-        double max = 1_000_000.01;
-        return getDouble(min, max);
+        System.out.print("Enter number: ");
+        double userInput = 0.0;
+        try {
+            userInput = Double.parseDouble(this.getString());
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid input. Try again.");
+            userInput = getDouble();
+        }
+        return userInput;
     }
 }
 
