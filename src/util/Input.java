@@ -82,5 +82,39 @@ public class Input {
         }
         return userInput;
     }
+
+    // Accepts binary number in String format and returns equivalent base 10 value
+    // Example:
+    // IN -> 1010
+    // OUT -> 10
+    public int getBinary(){
+        System.out.print("Enter binary number: ");
+        int userInput = 0;
+        try {
+            userInput = Integer.parseInt(this.getString(), 2);
+        } catch (NumberFormatException e){
+            System.out.println("Invalid input. Try again.");
+            userInput = getBinary();
+        }
+        return userInput;
+    }
+
+    // Accepts hexadecimal number in String format and returns equivalent base 10 value
+    // Example:
+    // IN -> 10
+    // OUT -> 16
+    public int getHex(){
+        System.out.print("Enter hexadecimal number: ");
+        int userInput = 0;
+        try {
+            userInput = Integer.parseInt(this.getString(), 16);
+        } catch (NumberFormatException e){
+            System.out.println("Invalid input. Try again.");
+            userInput = getBinary();
+        }
+        return userInput;
+    }
 }
+
+
 
