@@ -110,7 +110,7 @@ public class Input {
             userInput = Integer.parseInt(this.getString(), 16);
         } catch (NumberFormatException e){
             System.out.println("Invalid input. Try again.");
-            userInput = getBinary();
+            userInput = getHex();
         }
         return userInput;
     }
